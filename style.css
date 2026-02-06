@@ -4,82 +4,135 @@
     box-sizing: border-box;
 }
 
+/* ===== Background ===== */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #000000, #1a0000);
-    color: #f2f2f2;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1a0000, #000000 70%);
+    color: #eaeaea;
+    min-height: 100vh;
 }
 
+/* ===== Container ===== */
 .container {
-    width: 650px;
-    margin: 40px auto;
-    background: #0f0f0f;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    width: 680px;
+    margin: 50px auto;
+    background: rgba(10, 10, 10, 0.95);
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.4),
+        inset 0 0 15px rgba(255, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Judul utama */
+/* ===== Animasi Masuk ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Judul ===== */
 h1 {
     text-align: center;
-    color: #ff1e1e;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+    color: #ff1a1a;
+    font-size: 36px;
+    letter-spacing: 4px;
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.8),
+        0 0 25px rgba(255, 0, 0, 0.5);
+    margin-bottom: 25px;
 }
 
-/* Foto profil */
+/* ===== Foto Profil ===== */
 .profile {
     display: block;
-    margin: 20px auto;
-    width: 150px;
-    height: 150px;
+    margin: 25px auto;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    border: 4px solid #ff1e1e;
+    border: 4px solid #ff1a1a;
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.5);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
-/* Subjudul */
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 1),
+        0 0 60px rgba(255, 0, 0, 0.9);
+}
+
+/* ===== Sub Judul ===== */
 h2 {
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 10px;
     color: #ff4d4d;
-    border-left: 5px solid #ff1e1e;
-    padding-left: 10px;
+    font-size: 22px;
+    border-left: 5px solid #ff1a1a;
+    padding-left: 12px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
-/* Paragraf */
+/* ===== Text ===== */
 p {
-    line-height: 1.6;
-    color: #dddddd;
+    line-height: 1.7;
+    color: #dcdcdc;
+    margin-bottom: 10px;
 }
 
-/* List */
+/* ===== List ===== */
 ul {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 ul li {
-    margin: 6px 0;
+    margin: 8px 0;
+    position: relative;
 }
 
-/* Link */
+ul li::before {
+    content: "▸";
+    color: #ff1a1a;
+    position: absolute;
+    left: -18px;
+}
+
+/* ===== Link ===== */
 a {
     color: #ff4d4d;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 10px #ff1a1a;
 }
 
-/* Efek hover container */
+/* ===== Hover Container ===== */
 .container:hover {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
-    transition: 0.3s;
+    box-shadow:
+        0 0 35px rgba(255, 0, 0, 0.7),
+        inset 0 0 20px rgba(255, 0, 0, 0.25);
+    transition: 0.4s;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
     .container {
-        width: 90%;
+        width: 92%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 28px;
     }
 }
